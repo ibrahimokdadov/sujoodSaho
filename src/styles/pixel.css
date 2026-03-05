@@ -1,0 +1,185 @@
+/* Pixel Art Sprites and Effects */
+
+/* Pixel Tree */
+.pixel-tree {
+  display: inline-block;
+  position: relative;
+}
+
+/* Pixel button style */
+.btn-pixel {
+  display: inline-block;
+  padding: 12px 20px;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.6rem;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  position: relative;
+  transition: transform 0.1s;
+  min-height: 48px;
+  min-width: 80px;
+}
+
+.btn-pixel:active {
+  transform: translateY(2px);
+}
+
+/* Green button (before salam) */
+.btn-pixel-green {
+  background-color: #4a7c23;
+  color: #faf3e0;
+  box-shadow:
+    4px 0 0 0 #2d5016,
+    0 4px 0 0 #2d5016,
+    4px 4px 0 0 #2d5016,
+    -2px 0 0 0 #6aad33,
+    0 -2px 0 0 #6aad33;
+}
+
+/* Orange button (after salam) */
+.btn-pixel-orange {
+  background-color: #d97706;
+  color: #faf3e0;
+  box-shadow:
+    4px 0 0 0 #92400e,
+    0 4px 0 0 #92400e,
+    4px 4px 0 0 #92400e,
+    -2px 0 0 0 #f59e0b,
+    0 -2px 0 0 #f59e0b;
+}
+
+/* Brown wooden button */
+.btn-pixel-brown {
+  background-color: #8B4513;
+  color: #faf3e0;
+  box-shadow:
+    4px 0 0 0 #654321,
+    0 4px 0 0 #654321,
+    4px 4px 0 0 #654321,
+    -2px 0 0 0 #a0522d,
+    0 -2px 0 0 #a0522d;
+}
+
+/* Pixel panel/card */
+.pixel-panel {
+  background-color: #faf3e0;
+  border: 4px solid #8B4513;
+  box-shadow:
+    4px 4px 0 0 #654321,
+    8px 8px 0 0 rgba(0,0,0,0.15);
+  padding: 16px;
+}
+
+/* Progress dot */
+.pixel-dot {
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+  background-color: #c8b99a;
+  box-shadow: 2px 2px 0 0 #a09070;
+}
+
+.pixel-dot.active {
+  background-color: #4a7c23;
+  box-shadow: 2px 2px 0 0 #2d5016;
+}
+
+.pixel-dot.done {
+  background-color: #8B4513;
+  box-shadow: 2px 2px 0 0 #654321;
+}
+
+/* Tree sign */
+.tree-sign {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Wooden signpost */
+.wooden-sign {
+  background-color: #c8a46e;
+  border: 4px solid #8B4513;
+  box-shadow:
+    4px 4px 0 0 #654321,
+    8px 8px 0 0 rgba(0,0,0,0.2);
+  position: relative;
+}
+
+.wooden-sign::before {
+  content: '';
+  position: absolute;
+  bottom: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 12px;
+  height: 24px;
+  background-color: #8B4513;
+  box-shadow: 2px 0 0 0 #654321;
+}
+
+/* Color-coded result borders */
+.result-before {
+  border-color: #4a7c23;
+  box-shadow: 4px 4px 0 0 #2d5016, 8px 8px 0 0 rgba(0,0,0,0.15);
+}
+
+.result-after {
+  border-color: #d97706;
+  box-shadow: 4px 4px 0 0 #92400e, 8px 8px 0 0 rgba(0,0,0,0.15);
+}
+
+/* Flashcard */
+.flashcard-container {
+  perspective: 1000px;
+}
+
+.flashcard-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flashcard-inner.flipped {
+  transform: rotateY(180deg);
+}
+
+.flashcard-front,
+.flashcard-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.flashcard-back {
+  transform: rotateY(180deg);
+}
+
+/* Sky gradient */
+.pixel-sky {
+  background: linear-gradient(
+    to bottom,
+    #87CEEB 0%,
+    #b0e0ff 60%,
+    #d4f1ff 100%
+  );
+}
+
+/* Ground strip */
+.pixel-ground {
+  background-color: #4a7c23;
+  border-top: 4px solid #2d5016;
+  position: relative;
+  overflow: hidden;
+}
+
+/* RTL support */
+[dir="rtl"] .btn-pixel {
+  direction: rtl;
+}
